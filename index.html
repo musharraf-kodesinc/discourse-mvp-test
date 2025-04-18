@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SageMaster</title>
+    <meta name="description" content="SageMaster" />
+    <link rel="icon" href="/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon/favicon-32x32.png" />
+    <meta name="apple-mobile-web-app-title" content="Snippit" />
+    <meta name="application-name" content="sage-master" />
+    <meta name="msapplication-TileColor" content="#00C2AE" />
+    <meta name="google" content="notranslate" />
+    <meta name="theme-color" content="#202020" />
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" crossorigin="anonymous" />
+    <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
+
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+
+    <script src="https://esm.sh/react@19.0.0"></script>
+    <script src="https://esm.sh/react-dom@19.0.0"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.0.0",
+          "react-dom": "https://esm.sh/react-dom@19.0.0"
+        }
+      }
+    </script>
+
+    <script>
+      function onCustomChartLoad() {
+        window.CustomTradingView = window.TradingView;
+        window.TradingView = undefined;
+      }
+    </script>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <div id="absolute-portal-area"></div>
+    <!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+    <script>
+      !(function (e, t) {
+        const a = 'featurebase-sdk';
+        function n() {
+          if (!t.getElementById(a)) {
+            var e = t.createElement('script');
+            (e.id = a), (e.src = 'https://do.featurebase.app/js/sdk.js'), t.getElementsByTagName('script')[0].parentNode.insertBefore(e, t.getElementsByTagName('script')[0]);
+          }
+        }
+        'function' != typeof e.Featurebase &&
+          (e.Featurebase = function () {
+            (e.Featurebase.q = e.Featurebase.q || []).push(arguments);
+          }),
+          'complete' === t.readyState || 'interactive' === t.readyState ? n() : t.addEventListener('DOMContentLoaded', n);
+      })(window, document);
+    </script>
+  </body>
+</html>
